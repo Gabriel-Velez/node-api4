@@ -1,12 +1,14 @@
-require("dotenv").config();
+require('dotenv').config();
 
-const server = require("./api/server.js");
+const server = require('./api/server.js');
 
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT;
 
-if (PORT == null) console.error("no port set");
-else
-  server.listen(PORT, () => {
-    console.log("server is running on ", PORT);
-    console.log("env is ", process.env.NODE_ENV);
-  });
+if(PORT == null) {
+    console.error('no port set');
+} else {
+    server.listen(PORT, () => {
+        console.log(`server is running on port ${PORT}`);
+        console.log(`environment is ${process.env.NODE_ENV}`);
+    });
+}
