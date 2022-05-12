@@ -5,7 +5,7 @@ const server = express();
 server.use(express.json());
 
 server.get("/", (req, res) => {
-  res.send(<h1>hi</h1>);
+  res.send("<h1>hi</h1>");
 });
 
 server.get("/node-env", (req, res) => {
